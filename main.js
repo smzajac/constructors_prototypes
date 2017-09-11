@@ -8,7 +8,7 @@
 
 // Dog Constructor & Prototype
 function Dog (name, status, color, hungry) {
-  this.name = name;
+  // this.name = name;
   this.status = status;
   this.color = color;
   this.hungry = hungry;
@@ -29,29 +29,31 @@ let atticus = new Dog("atticus");
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
 // Human Constructor & Prototype
-function Human (name, pet) {
-  this.name = name;
-  this.pet = pet;
+function Human (cool) {
+  this.cool = cool;
+
 };
 
+Human.prototype.pet = function(animal){
+  animal.status = "happy";
+};
 
+Human.prototype.feed = function(animal){
+  animal.hungry = false;
+};
+
+console.log(Human.pet);
 // Instances of Human
 // Needed: mason, julia
+let mason = new Human(false);
+let julia = new Human(true);
 
 
 
-let mason = new Human("mason", sadie);
-let julia = new Human("julia");
-
-// mason.protoype = new Human();
 
 
 
-mason.prototype = new Human();
 
 
-mason.prototype.pet = function(animal){
-  this.pet(animal);
-};
-
-console.log(mason.pet);
+//
+// console.log(mason.prototype.pet);
